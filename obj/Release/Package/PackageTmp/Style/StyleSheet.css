@@ -1,0 +1,91 @@
+﻿body {
+    background-color: beige;
+    font-family: 'Open Sans', sans-serif;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+hr {
+    margin-top: 30px;
+}
+
+.main {
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+#header {
+    overflow: auto;
+}
+
+.hero-image {
+    /*height: auto;*/
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read, linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  */
+    background-image: url("../Pics/header_crop.jpeg");
+    color: black;
+    /* Set a specific height */
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    /*position: absolute;*/
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    color: antiquewhite;
+    transform: translate(-50%, -10%);
+    font-family: 'Bowlby One SC', cursive;
+}
+.hero-text h1 {
+    color: white;
+}
+
+#contents {
+    background-color: ivory;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: black;
+    color: white;
+
+}
+
+#bold {
+    font-weight: bold;
+}
+
+/*Validation for tips*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

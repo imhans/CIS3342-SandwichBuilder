@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Style/StyleSheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> <!--Open Sans fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet"> <!--Bowlby fonts-->
+    <title>HANS SANDWICH</title>
+</head>
+<body>
+    <form id="myForm" runat="server" method="post" action="sandwich.aspx" onsubmit="return validateForm()">
+        <section id="header">
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1>Hans' Sandwich</h1>
+                    <h5>Get your freshest and best tasting sandwich at good prices</h5>
+                </div>
+            </div>
+        </section>
+
+        <div class="main container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6" id="contents">
+                    <div id="instruction">
+                        <h2 id="bold"> Welcome to HANS SANDWICH! </h2>
+                        <h4>
+                            Let's get started with your name and contact number before we take your order
+                        </h4>
+                        <br />
+                    </div>
+
+                    <div id="userInfo">
+                        <div class="form-group">
+                            <!--User Information-->
+                            <input type="text" class="form-control" id="username" name="userName" placeholder="Name" />
+                            <input type="text" class="form-control" id="phonenumber" name="phoneNumber" placeholder="Contact Number (215-000-0000)" />
+                        </div>
+                    </div>
+                    <hr /> <!--horizontal line-->
+                    <div id="customizing" class="form-group">
+                        <h3 id="bold">
+                            Customize your sandwich here
+                        </h3>
+                        <h5>
+                            [ Size ]
+                        </h5>
+                        <select id="sandwichsize" name="sandwichSize" class="form-control">
+                            <option value="Small">Small Size ($4.99) </option>
+                            <option value="Medium">Medium Size ($6.99)</option>
+                            <option value="Large">Large Size ($8.99)</option>
+                            <option value="King">King Size ($10.99)</option>
+                            <option value="Mega">Mega Size ($12.99)</option>
+                        </select> <br />
+
+                        <h5>
+                            [ Meal Option ]
+                        </h5>
+                        <ul>
+                            <li><input type="radio" name="meal" value="Meal" required /> Meal <span style="float:right">(+ $3.00)</span></li>
+                            <li><input type="radio" name="meal" value="" required /> A sandwich</li>
+                        </ul>
+
+                        <h5>
+                            [ Toaster ]
+                        </h5>
+                        <ul>
+                            <li><input type="radio" name="toaster" value="Toasted" required /> Toasted</li>
+                            <li><input type="radio" name="toaster" value="Not toasted" required /> Not Toasted </li>
+                        </ul>
+
+                        <h5>
+                            [ Sauces ]
+                        </h5>
+                        <ul>
+                            <li><input type="hidden" name="sauce" value="" /></li> <!--This line prevents the error of null array in case none of the checkboxes are clicked-->
+                            <li><input type="checkbox" name="sauce" value=" Mayo" /> Mayo <span style="float:right">(+ $0.25)</span> </li>
+                            <li><input type="checkbox" name="sauce" value=" Mustard" /> Mustard <span style="float:right">(+ $0.25)</span></li>
+                            <li><input type="checkbox" name="sauce" value=" Avocado" /> Avocado <span style="float:right">(+ $1.25)</span></li>
+                            <li><input type="checkbox" name="sauce" value=" Ranch" /> Ranch <span style="float:right">(+ $0.25)</span></li>
+                            <li><input type="checkbox" name="sauce" value=" Barbeque" /> Barbeque <span style="float:right">(+ $0.25)</span></li>
+                        </ul>
+
+                        <h5>
+                            [ Toppings ]
+                        </h5>
+                        <ul>
+                            <li><input type="hidden" name="topping" value="" /></li>
+                            <li><input type="checkbox" name="topping" value=" Lettuce" /> Lettuce <span style="float:right">(+ $0.50)</span></li>
+                            <li><input type="checkbox" name="topping" value=" Tomato" /> Tomato <span style="float:right">(+ $0.50)</span></li>
+                            <li><input type="checkbox" name="topping" value=" Onions" /> Onions <span style="float:right">(+ $0.50)</span></li>
+                            <li><input type="checkbox" name="topping" value=" Pickles" /> Pickles <span style="float:right">(+ $0.50)</span></li>
+                            <li><input type="checkbox" name="topping" value=" Spinach" /> Spinach <span style="float:right">(+ $0.50)</span></li>
+                        </ul>
+
+                        <h5>
+                            [ Additions ]
+                        </h5>
+                        <ul>
+                            <li><input type="hidden" name="addition" value="" /></li>
+                            <li><input type="checkbox" name="addition" value=" Bacon" /> Add Bacon <span style="float:right">(+ $2.00)</span> </li>
+                            <li><input type="checkbox" name="addition" value=" Pepperoni" /> Add Pepperoni <span style="float:right">(+ $2.00)</span> </li>
+                            <li><input type="checkbox" name="addition" value=" Extra Meat" /> Extra Meat <span style="float:right">(+ $2.00)</span> </li>
+                            <li><input type="checkbox" name="addition" value=" Extra Cheese" /> Extra Cheese <span style="float:right">(+ $1.00)</span> </li>
+                            <li><input type="checkbox" name="addition" value=" Extra Avocado" /> Extra Avocado <span style="float:right">(+ $2.00)</span> </li>
+                        </ul>
+
+                        <h5>
+                            [ Sides ]
+                        </h5>
+                        <ul>
+                            <li><input type="hidden" name="side" value="" /></li>
+                            <li><input type="checkbox" name="side" value=" Chips" /> Chips <span style="float:right">(+ $1.00)</span></li>
+                            <li><input type="checkbox" name="side" value=" Cookies" /> Cookies <span style="float:right">(+ $2.00)</span></li>
+                            <li><input type="checkbox" name="side" value=" Meatballs" /> Meatballs <span style="float:right">(+ $3.00)</span></li>
+                            <li><input type="checkbox" name="side" value=" Mac & Cheese" /> Mac & Cheese <span style="float:right">(+ $3.00)</span></li>
+                            <li><input type="checkbox" name="side" value=" Mashed Potatoes" /> Mashed Potatoes <span style="float:right">(+ $3.00)</span></li>
+                        </ul>
+
+                        <h5 id="bold">Tips for the service will be highly appreciated</h5>
+                        <input type="number" class="form-control" id="tip" name="tips" placeholder="$ (USD) : only numbers, not letters" />
+
+                    </div>
+
+                    <div id="submission">
+                        <!--submit button-->
+                        <input type="submit" class="btn btn-primary btn-block" id="submitOrder" name="submitOrder" value="Place your order" />
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div> <!--row-->
+        </div>   
+
+        <div class="footer">
+            <div id="copyright">
+                <h5> &copy; HANS YIM | CIS 3342 | Temple University</h5>
+            </div>
+        </div>
+
+</form>
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["userName"].value;
+            var y = document.forms["myForm"]["phoneNumber"].value;
+
+            if (x == "") {
+            alert("Name must be filled out");
+            return false;
+            }
+
+            if (y == "") {
+                alert("Contact Number must be filled out");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
